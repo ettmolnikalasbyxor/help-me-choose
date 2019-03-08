@@ -6,7 +6,8 @@
    <link href="./main.css" rel="stylesheet" type="text/css">
  </head>
  <body>
-   <h1>Help me choose between...</h1>
+   <h1 class="questionSection"> Help me choose between...</h1>
+   <h2 class="winnerSection">The winner is...</h2>
    <div class="inputSection">
      <div class="inputs">
        <input placeholder="Something"></input>
@@ -20,6 +21,7 @@
  <script>
   $(function() {
    $ ('.resultSection').hide()
+   $('.winnerSection').hide()
 
    var add_option = function() {
      $('.inputs').append('<input></input>')
@@ -31,10 +33,13 @@
 
    var submit = function () {
      $('.inputSection').hide()
+     $('.questionSection').hide()
+     $('.winnerSection').css('display','flex')
      $('.resultSection').css('display','flex')
      $('input').each(function() {
        options.push($(this).val())
      })
+
 
 
 
